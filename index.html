@@ -12,82 +12,106 @@
             height: 100vh;
             background-repeat: no-repeat;
             background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Default background color */
         body[data-bg="default"] {
-            background-color: #ff69b4; /* Pink background */
+            background-color: #ecf0f1; /* Light gray background */
         }
 
         /* Background color for berta.theburritobot.com */
         body[data-bg="berta"] {
-            background-color: pink;
+            background-color: #c3aed6; /* Lavender */
         }
 
         /* Background color for pipe.theburritobot.com */
         body[data-bg="pipe"] {
-            background-color: green;
+            background-color: #a0d8d1; /* Turquoise */
         }
 
         /* Background color for leo.theburritobot.com */
         body[data-bg="leo"] {
-            background-color: blue;
+            background-color: #82ccdd; /* Sky Blue */
         }
 
         /* Background color for hilal.theburritobot.com */
         body[data-bg="hilal"] {
-            background-color: yellow;
+            background-color: #f7dc6f; /* Pastel Yellow */
+        }
+        body[data-bg="vlada"] {
+            background-color: #FF6961; /* Pastel Red */
+        }
+        body[data-bg="tiago"] {
+            background-color: #ff964f; /* Pastel Orange */
         }
 
-        /* Style the header */
-        header {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        header h1 {
-            font-size: 36px;
-            color: #fff; /* White text */
-        }
-
-        /* Style the main content section */
-        .main-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff; /* White background */
-            padding: 20px;
+        /* Style the login container */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 60px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .main-content h2 {
-            color: #ff69b4; /* Pink color for headings */
-        }
-
-        /* Style the footer */
-        footer {
             text-align: center;
-            padding: 20px 0;
-            background-color: #ff69b4;
+        }
+
+        /* Style the login form */
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            background-color: #3498db; /* Blue button color */
             color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style the title */
+        .title {
+            font-size: 36px;
+		font-family: 'Helvetica', sans-serif;
+            color: #333; /* Dark gray text */
+            margin-bottom: 25px;
         }
     </style>
-    <title>SaaS</title>
+    <title>SSL for SaaS</title>
 </head>
 <body data-bg="default">
-    <header>
-        <h1>Welcome to your SaaS</h1>
-    </header>
-    <nav>
-        <!-- You can add navigation links here if needed -->
-    </nav>
-    <section class="main-content">
-        <h2>About Us</h2>
-        <p>Your SaaS description goes here.</p>
-    </section>
-    <footer>
-        <p>&copy; 2023 SSL for SaaS</p>
-    </footer>
+    <div class="login-container">
+        <div class="title" id="pageTitle">
+            SSL for SaaS
+        </div>
+        <form class="login-form" action="#" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
     <script>
         // Get the hostname from the URL
@@ -97,13 +121,24 @@
         let backgroundColor = "default"; // Default color
 
         if (hostname === "berta.theburritobot.com") {
-            backgroundColor = "berta"; // Pink
+            backgroundColor = "berta"; // Lavender
+            document.getElementById("pageTitle").textContent = "Berta's SaaS";
         } else if (hostname === "pipe.theburritobot.com") {
-            backgroundColor = "pipe"; // Green
+            backgroundColor = "pipe"; // Turquoise
+            document.getElementById("pageTitle").textContent = "Pipe's SaaS";
         } else if (hostname === "leo.theburritobot.com") {
-            backgroundColor = "leo"; // Blue
+            backgroundColor = "leo"; // Sky Blue
+            document.getElementById("pageTitle").textContent = "Leo's SaaS";
         } else if (hostname === "hilal.theburritobot.com") {
-            backgroundColor = "hilal"; // Yellow
+            backgroundColor = "hilal"; // Pastel Yellow
+            document.getElementById("pageTitle").textContent = "Hilal's SaaS";
+        }else if (hostname === "vlada.sslforberts.bertasdemos.com") {
+            backgroundColor = "vlada"; // Pastel Yellow
+            document.getElementById("pageTitle").textContent = "Vlada's SaaS";
+        }
+        else if (hostname === "tiago.sslforberts.bertasdemos.com") {
+            backgroundColor = "tiago"; // Pastel Yellow
+            document.getElementById("pageTitle").textContent = "Tiago's SaaS";
         }
 
         // Set the data-bg attribute to change the background color
